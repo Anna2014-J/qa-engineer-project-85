@@ -49,6 +49,26 @@
      Автоматически происходит переход на новую персонализированную страницу пользователя 
 
 - summary: |
+    Проверка корректности электронной почты по наличию ее адреса в регистре почтовых адресов
+  requirement: 
+    После ввода корректных данных электронной почты и нажатии кнопки "Submit" происходит отправка сообщения на адрес электронной почты с ссылкой для подтверждения регистрации
+  prerequisites: |
+    Открыть страницу регистрации пользователя https://codebattle.hexlet.io/users/new?locale=en&next=%2F
+  test-data: |
+    Кнопка: "Submit"
+    Почта: markus_0101@gmail.com
+    Пароль: Markus0101!
+    Имя пользователя: Markusi
+  steps:
+    - В поле ввода логина "Nickname" вписываем имя пользователя: Markusi
+    - В поле ввода электронной почты "Email" вписываем: markus_0101@gmail.com
+    - В поле ввода пароля "Password" вписываем: Markus0101!
+    - В поле ввода подтверждения пароля "Password Confirmation" вписываем: Markus0101!
+    - Нажимаем кнопку "Submit"
+  expected-result: |
+     На экране появляется окно с сообщением об отправки ссылки для подтвержения регистрации на электронную почту 
+
+- summary: |
     Проверка регистрации нового пользователя с указанием некорректного имени пользователя
   requirement: |
     При вводе некорректного имени пользователя система отобразит строчку с сообщением об ошибке
@@ -104,6 +124,26 @@
     - Нажимаем кнопку "Submit"
   expected-result: |
     Система выводит строчку под полем для указания имя пользователя с сообщением об ошибке "Should be from 3 to 16 characters"
+
+- summary: |
+    Проверка регистрации нового пользователя с указанием пустого значения электронной почты
+  requirement: |
+    При вводе пустого значения в адресе электронной почты система отобразит строчку с сообщением об ошибке
+  prerequisites: |
+    Открыть страницу регистрации пользователя https://codebattle.hexlet.io/users/new?locale=en&next=%2F
+  test-data: |
+    Почта: markus_0101@gmail.com
+    Пароль: Markus0101!
+    Имя пользователя: Markusi
+  steps:
+    - В поле ввода логина "Nickname" вписываем имя пользователя: Markusi
+    - В поле ввода электронной почты "Email" ничего не вписываем
+    - В поле ввода пароля "Password" вписываем: Markus0101!
+    - В поле ввода подтверждения пароля "Password Confirmation" вписываем: Markus0101!
+    - Нажимаем кнопку "Submit"
+  expected-result: |
+    Система выводит строчку под полем для указания почты с сообщением об ошибке "Email required"
+
 
 - summary: |
     Проверка регистрации нового пользователя с указанием имени пользователя, уже зарегистрированного на сайте
@@ -223,7 +263,7 @@
     Система выводит строчку под полем для указания пароля с сообщением об ошибке "Should be from 6 to 16 characters"
 
 - summary: |
-    Проверка работоспособности кнопки "Sign up with Github"
+    Проверка работоспособности кнопки "Sign up with Github" 
   requirement: |
     При нажатии на кнопку "Sign up with Github" происходит автоматический переход на персональную страницу пользователя, авторизация с помощью имеющегося аккаунта на GitHub
   prerequisites: |
@@ -236,7 +276,7 @@
     Cистема связывает аккаунты, автоматически происходит переход на страницу сайта, создается личный кабинет пользователя, с профилем на базе аккаунта в GitHub
 
 - summary: |
-    Проверка регистрации нового пользователя с помощью авторизированного аккаунта на GitHub
+    Проверка регистрации нового пользователя с помощью авторизированного аккаунта на GitHub и с помощью кнопки "Sign up with Github" 
   requirement: |
      При нажатии на кнопку "Sign up with Github" система связывает авторизированный аккаунт на GitHub с созданным новым аккаунтом на Codebattle и происходит создание личного кабинета пользователя
   prerequisites: |
@@ -249,7 +289,7 @@
     Cистема связывает аккаунты, автоматически происходит переход на страницу сайта, создается личный кабинет пользователя, с профилем на базе аккаунта в GitHub
 
 - summary: |
-    Проверка регистрации нового пользователя без авторизированного аккаунта на GitHub
+    Проверка регистрации нового пользователя без авторизированного аккаунта на GitHub, с помощью кнопки "Sign up with Github" 
   requirement: |
      При нажатии на кнопку "Sign up with Github" происходит переход на страницу авторизации в GitHub c полями для ввода данных
   prerequisites: |
@@ -260,3 +300,490 @@
      - Нажимаем на кнопку "Sign up with Github" снизу под полями для ручного ввода 
   expected-result: |
     Автоматически открывается страница github.com с полями для авторизации и с сообщением "Войдите в GitHub, чтобы продолжить Codebattle"
+
+- summary: |
+    Проверка регистрации нового пользователя без авторизированного аккаунта на Discord и с помощью кнопки "Sign up with Discord"
+  requirement: |
+     При нажатии на кнопку "Sign up with Discord" происходит переход на страницу авторизации в Discord c полями для ввода данных
+  prerequisites: |
+    Открыть страницу регистрации пользователя https://codebattle.hexlet.io/users/new?locale=en&next=%2F
+  test-data: |
+    Кнопка: "Sign up with Discord"
+  steps:
+     - Нажимаем на кнопку "Sign up with Discord" снизу под полями для ручного ввода 
+  expected-result: |
+    Автоматически открывается страница discord.com с полями для авторизации
+
+- summary: |
+    Проверка регистрации нового пользователя c помощью авторизированного аккаунта на Discord и с помощью кнопки "Sign up with Discord"
+  requirement: |
+     При нажатии на кнопку "Sign up with Discord" происходит автоматический переход на страницу сайта, создается личный кабинет пользователя, с профилем на базе аккаунта в Discord
+  prerequisites: |
+    Открыть страницу регистрации пользователя https://codebattle.hexlet.io/users/new?locale=en&next=%2F
+  test-data: |
+    Кнопка: "Sign up with Discord"
+  steps:
+     - Нажимаем на кнопку "Sign up with Discord" снизу под полями для ручного ввода 
+  expected-result: |
+     Cистема связывает аккаунты, автоматически происходит переход на страницу сайта, создается личный кабинет пользователя, с профилем на базе аккаунта в Discord
+
+- summary: |
+    Проверка работоспособности скрытой ссылки "Sing in"
+  requirement: |
+    При нажатии на ссылку "Sing in" происходит переход на страницу авторизации пользователя
+  prerequisites: |
+    Открыть страницу регистрации пользователя https://codebattle.hexlet.io/users/new?locale=en&next=%2F
+  test-data: |
+    Ссылка: Sing in
+  steps:
+    - Кликнуть левой кнопкой мыши по скрытой ссылке "Sign in", расположенный по центу у нижнего края ячейки для ввода данных регистрации
+  expected-result: |
+     Происходит автоматический переход на страницу авторизации пользователя https://codebattle.hexlet.io/session/new?next=/
+
+- summary: |
+    Проверка работоспособности скрытой ссылки "@Hexlet Itd"
+  requirement: |
+    При нажатии на ссылку "@Hexlet Itd" происходит переход на страницу сайта Hexlet - https://ru.hexlet.io/
+  prerequisites: |
+    Открыть страницу регистрации пользователя https://codebattle.hexlet.io/users/new?locale=en&next=%2F
+  test-data: |
+    Ссылка: @Hexlet Itd
+  steps:
+    - Кликнуть левой кнопкой мыши по скрытой ссылке "@Hexlet Itd", расположенный слева у нижнего края страницы
+  expected-result: |
+     Происходит автоматический переход на страницу сайта Hexlet - https://ru.hexlet.io/
+
+- summary: |
+    Проверка работоспособности скрытой ссылки "Current version: d992ede"
+  requirement: |
+    При нажатии на ссылку "Current version: d992ede" происходит переход на страницу сайта GitHub - https://github.com/hexlet-codebattle/codebattle/commit/d992edeee653f188854aa72bb6f8df8d727fc00f в репозиторий с измененными файлами
+  prerequisites: |
+    Открыть страницу регистрации пользователя https://codebattle.hexlet.io/users/new?locale=en&next=%2F
+  test-data: |
+    Ссылка: Current version: d992ede
+  steps:
+    - Кликнуть левой кнопкой мыши по скрытой ссылке "Current version: d992ede", расположенный справа у нижнего края страницы
+  expected-result: |
+     Происходит автоматический переход на страницу сайта GitHub - https://github.com/hexlet-codebattle/codebattle/commit/d992edeee653f188854aa72bb6f8df8d727fc00f
+
+- summary: |
+    Проверка работоспособности скрытой ссылки "Hexlet Codebattle by Hexlet's community"
+  requirement: |
+    При нажатии на ссылку "Hexlet Codebattle by Hexlet's community" происходит переход на страницу сайта https://codebattle.hexlet.io/
+  prerequisites: |
+    Открыть страницу регистрации пользователя https://codebattle.hexlet.io/users/new?locale=en&next=%2F
+  test-data: |
+    Ссылка: Hexlet Codebattle by Hexlet's community
+  steps:
+    - Кликнуть левой кнопкой мыши по скрытой ссылке "Hexlet Codebattle by Hexlet's community", расположенный слева у верхнего края страницы
+  expected-result: |
+     Происходит автоматический переход на страницу сайта https://codebattle.hexlet.io/
+
+- summary: |
+    Проверка работоспособности кнопки "Sing in"
+  requirement: |
+    При нажатии на кнопку "Sing in" происходит переход на страницу авторизации пользователя
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/
+  test-data: |
+    Кнопка: Sing in
+  steps:
+    - Кликнуть левой кнопкой мыши по кнопке "Sign in" в правом верхнем углу страницы
+  expected-result: |
+     Происходит автоматический переход на страницу авторизации пользователя https://codebattle.hexlet.io/session/new?locale=en&next=%2F
+
+- summary: |
+    Проверка авторизации ранее зарегистрированного пользователя
+  requirement: |
+    При вводе данных зарегистрированного ранее пользователя происходит автоматический переход на страницу сайта с доступом к персональному кабинету пользователя
+  prerequisites: |
+    Открыть страницу авторизации пользователя https://codebattle.hexlet.io/session/new?locale=en&next=%2F
+  test-data: |
+    Почта: markus_0101@gmail.com
+    Пароль: Markus0101!
+  steps:
+    - В поле ввода электронной почты "Email" вписываем: markus_0101@gmail.com
+    - В поле ввода пароля "Password" вписываем: Markus0101!
+    - Нажимаем кнопку "Submit"
+  expected-result: |
+    Автоматически происходит переход на страницу сайта с доступом к персональному кабинету пользователя и указанным при регистрации логином
+
+- summary: |
+    Проверка авторизации ранее незарегистрированного пользователя
+  requirement: |
+    При вводе данных незарегистрированного ранее пользователя появляется строка с сообщением об ошибке авторизации
+  prerequisites: |
+    Открыть страницу авторизации пользователя https://codebattle.hexlet.io/session/new?locale=en&next=%2F
+  test-data: |
+    Почта: gaga@mail.ru
+    Пароль: Markus0101!
+  steps:
+    - В поле ввода электронной почты "Email" вписываем: gaga@mail.ru
+    - В поле ввода пароля "Password" вписываем: Markus0101!
+    - Нажимаем кнопку "Submit"
+  expected-result: |
+     Перехода не происходит, появляется строка с сообщением об ошибке "EMAIL_NOT_FOUND"
+
+- summary: |
+    Проверка авторизации с пустым полем для ввода электронной почты
+  requirement: |
+    При пустом значением в поле ввода электронной почты пользователя появляется строка с сообщением об ошибке авторизации
+  prerequisites: |
+    Открыть страницу авторизации пользователя https://codebattle.hexlet.io/session/new?locale=en&next=%2F
+  test-data: |
+    Почта: 
+    Пароль: Markus0101!
+  steps:
+    - В поле ввода электронной почты "Email" ничего не вписываем
+    - В поле ввода пароля "Password" вписываем: Markus0101!
+    - Нажимаем кнопку "Submit"
+  expected-result: |
+     Перехода не происходит, появляется строка с сообщением об ошибке "Email required"
+
+- summary: |
+    Проверка авторизации с пустым полем для ввода пароля
+  requirement: |
+    При пустом значением в поле ввода пароля  появляется строка с сообщением об ошибке авторизации
+  prerequisites: |
+    Открыть страницу авторизации пользователя https://codebattle.hexlet.io/session/new?locale=en&next=%2F
+  test-data: |
+    Почта: markus_0101@gmail.com
+    Пароль: 
+  steps:
+    - В поле ввода электронной почты "Email" вписываем: markus_0101@gmail.com
+    - В поле ввода пароля "Password" ничего не вписываем
+    - Нажимаем кнопку "Submit"
+  expected-result: |
+     Перехода не происходит, появляется строка с сообщением об ошибке "Password required"
+
+- summary: |
+    Проверка авторизации с некорректным паролем 
+  requirement: |
+    При некорректном значением в поле ввода пароля появляется строка с сообщением об ошибке авторизации
+  prerequisites: |
+    Открыть страницу авторизации пользователя https://codebattle.hexlet.io/session/new?locale=en&next=%2F
+  test-data: |
+    Почта: markus_0101@gmail.com
+    Пароль: Морковка
+  steps:
+    - В поле ввода электронной почты "Email" вписываем: markus_0101@gmail.com
+    - В поле ввода пароля "Password" вписываем: Морковка
+    - Нажимаем кнопку "Submit"
+  expected-result: |
+     Перехода не происходит, появляется строка с сообщением об ошибке "INVALID_PASSWORD"
+
+- summary: |
+    Проверка авторизации с некорректным адресом почты
+  requirement: |
+    При вводе неккоретных данных электронной почты  появляется строка с сообщением об ошибке авторизации
+  prerequisites: |
+    Открыть страницу авторизации пользователя https://codebattle.hexlet.io/session/new?locale=en&next=%2F
+  test-data: |
+    Почта: Чизкейк
+    Пароль: Markus0101!
+  steps:
+    - В поле ввода электронной почты "Email" вписываем: Чизкейк
+    - В поле ввода пароля "Password" вписываем: Markus0101!
+    - Нажимаем кнопку "Submit"
+  expected-result: |
+     Перехода не происходит, появляется строка с сообщением об ошибке "Invalid email"
+
+- summary: |
+    Проверка работоспособности скрытой ссылки "Sing up"
+  requirement: |
+    При нажатии на ссылку "Sing up" происходит переход на регистрации нового пользователя
+  prerequisites: |
+    Открыть страницу регистрации пользователя https://codebattle.hexlet.io/session/new?locale=en&next=%2F
+  test-data: |
+    Ссылка: Sing up
+  steps:
+    - Кликнуть левой кнопкой мыши по скрытой ссылке "Sign up", расположенный по центу у нижнего края ячейки для ввода данных авторизации
+  expected-result: |
+     Происходит автоматический переход на страницу регистрации нового пользователя https://codebattle.hexlet.io/users/new?next=/
+
+- summary: |
+    Проверка работоспособности ссылки "Forgot your password?"
+  requirement: |
+    При нажатии левой кнопкой мыши на ссылку "Forgot your password?" происходит автоматический переход на страницу восстановления пароля https://codebattle.hexlet.io/remind_password
+  prerequisites: |
+    Открыть страницу авторизации пользователя https://codebattle.hexlet.io/session/new?locale=en&next=%2F
+  test-data: |
+    Почта: markus_0101@gmail.com
+    Пароль: 
+  steps:
+    - В поле ввода электронной почты "Email" вписываем: markus_0101@gmail.com
+    - В поле ввода пароля "Password" ничего не вписываем 
+    - Нажимаем на ссылку "Forgot your password?"
+  expected-result: |
+    Автоматически происходит переход на страницу восстановления пароля https://codebattle.hexlet.io/remind_password
+
+- summary: |
+    Проверка работоспособности кнопки "Submit" при авторизации пользователя
+  requirement: 
+    После ввода корректных данных для авторизации и нажатии кнопки "Submit" происходит переход на страницу сайта с доступом к кабинету пользователя
+  prerequisites: |
+    Открыть страницу авторизации пользователя https://codebattle.hexlet.io/session/new?next=/
+  test-data: |
+    Кнопка: "Submit"
+  steps:
+    - В поле ввода электронной почты "Email" вписываем: markus_0101@gmail.com
+    - В поле ввода пароля "Password" вписываем: Markus0101!
+    - Нажимаем кнопку "Submit"
+  expected-result: |
+     Автоматически происходит переход нстраницу сайта с доступом к кабинету пользователя
+
+- summary: |
+    Проверка авторизации с помощью кнопки "Sign in with Github" и авторизированного аккаунта на GitHub
+  requirement: |
+    При нажатии на кнопку "Sign in with Github" происходит автоматический переход на страницу сайта с доступом к кабинету пользователя
+  prerequisites: |
+     Открыть страницу авторизации пользователя https://codebattle.hexlet.io/session/new?next=/
+  test-data: |
+    Кнопка: "Sign in with Github"
+  steps:
+    - Нажимаем на кнопку "Sign in with Github" снизу под полями для ручного ввода 
+  expected-result: |
+     Автоматически происходит переход на страницу сайта с доступом в личный кабинет пользователя, с профилем на базе аккаунта в GitHub
+
+- summary: |
+    Проверка авторизации пользователя через кнопку "Sign in with Github"с помощью неавторизированного аккаунта на GitHub
+  requirement: |
+     При нажатии на кнопку "Sign in with Github" система делает переход на страницу авторизации в GitHub c полями для ввода данных
+  prerequisites: |
+     Открыть страницу авторизации пользователя https://codebattle.hexlet.io/session/new?next=/
+  test-data: |
+    Кнопка: "Sign in with Github"
+  steps:
+     - Нажимаем на кнопку "Sign in with Github" снизу под полями для ручного ввода 
+  expected-result: |
+     Происходит переход на страницу авторизации в GitHub c полями для ввода данных
+
+- summary: |
+    Проверка авторизации пользователя через кнопку "Sign in with Discord" без авторизированного аккаунта на Discord
+  requirement: |
+     При нажатии на кнопку "Sign in with Discord" происходит переход на страницу авторизации в Discord c полями для ввода данных
+  prerequisites: |
+    Открыть страницу авторизации пользователя https://codebattle.hexlet.io/session/new?next=/
+  test-data: |
+    Кнопка: "Sign in with Discord"
+  steps:
+     - Нажимаем на кнопку "Sign in with Discord" снизу под полями для ручного ввода 
+  expected-result: |
+    Автоматически открывается страница discord.com с полями для авторизации
+
+- summary: |
+    Проверка авторизации пользователя через кнопку "Sign in with Discord" c помощью авторизированного аккаунта на Discord 
+  requirement: |
+     При нажатии на кнопку "Sign up with Discord" происходит автоматический переход на страницу сайта c доступом в личный кабинет пользователя, с профилем на базе аккаунта в Discord
+  prerequisites: |
+    Открыть страницу авторизации пользователя https://codebattle.hexlet.io/session/new?next=/
+  test-data: |
+    Кнопка: "Sign in with Discord"
+  steps:
+     - Нажимаем на кнопку "Sign in with Discord" снизу под полями для ручного ввода 
+  expected-result: |
+     Автоматически происходит переход на страницу сайта, с доступом в личный кабинет пользователя, с профилем на базе аккаунта в Discord
+
+- summary: |
+    Проверка восстановления пароля при вводе адреса электронной почты ранее зарегистрированного пользователя
+  requirement: |
+    При вводе адреса электронной почты ранее зарегистрированного пользователя на почту отправляется письмо с рекомендациями для восстановления пароля
+  prerequisites: |
+    Открыть страницу восстановления пароля https://codebattle.hexlet.io/remind_password
+  test-data: |
+    Почта: markus_0101@gmail.com
+  steps:
+    - В поле ввода электронной почты "Email" вписываем: markus_0101@gmail.com
+    - Нажимаем на кнопку "Submit"
+  expected-result: |
+    На экране появляется сообщение: "We have sent you an email with instructions on how to reset your password"
+
+- summary: |
+    Проверка восстановления пароля при вводе пустого значения в поле ввода адреса электронной почты
+  requirement: |
+    При вводе пустого значения адреса электронной почты появляется строка с сообщением об ошибке
+  prerequisites: |
+    Открыть страницу восстановления пароля https://codebattle.hexlet.io/remind_password
+  test-data: |
+    Почта: 
+  steps:
+    - В поле ввода электронной почты "Email" ничего не вписываем
+    - Нажимаем на кнопку "Submit"
+  expected-result: |
+    Под полем ввода адреса электронной почты появляется сообщение "Email required"
+
+- summary: |
+    Проверка восстановления пароля при вводе некорректного значения в поле ввода адреса электронной почты
+  requirement: |
+    При вводе некорректного значения адреса электронной почты появляется строка с сообщением об ошибке
+  prerequisites: |
+    Открыть страницу восстановления пароля https://codebattle.hexlet.io/remind_password
+  test-data: |
+    Почта: Картошка
+  steps:
+    - В поле ввода электронной почты "Email" вписываем: Картошка
+    - Нажимаем на кнопку "Submit"
+  expected-result: |
+    Под полем ввода адреса электронной почты появляется сообщение "Invalid email"
+
+- summary: |
+    Проверка работоспособности кнопки "Star us" 
+  requirement: |
+    При нажатии левой кнопкой мыши на кнопку "Star us" происходит автоматический переход на страницу https://github.com/hexlet-codebattle/codebattle
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/
+  test-data: |
+    Кнопка: "Star us" 
+  steps:
+    - Нажимаем на кнопку "Star us" 
+  expected-result: |
+    Происходит автоматический переход на страницу https://github.com/hexlet-codebattle/codebattle
+
+- summary: |
+    Проверка корректного отображения количества звезд внутри кнопки "Star us" 
+  requirement: |
+    При переходе на сайт https://github.com/hexlet-codebattle/codebattle количество звезд по статитстике GitHub совпадает с количеством звезд внутри кнопки "Star us" на сайте https://codebattle.hexlet.io/
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/
+  test-data: |
+    Кнопка: "Star us" 
+    Страница на GitHub: https://github.com/hexlet-codebattle/codebattle
+  steps:
+    - Нажимаем на кнопку "Star us" 
+    - Переходим автоматически на страницу https://github.com/hexlet-codebattle/codebattle
+    - Находим вкладку Starred на момент теста количество звезд - 778
+    - Возвращвемся на страницу https://codebattle.hexlet.io/
+    - Смотрим на количество звезд внутри кнопки "Star us" 
+  expected-result: |
+    Количество звезд по статитстике GitHub совпадает с количеством звезд внутри кнопки "Star us" на сайте https://codebattle.hexlet.io/
+
+- summary: |
+    Проверка корректного отображения количества звезд внутри кнопки "Star us", после добавления оценки
+  requirement: |
+    При добавлении звезды на сайте https://github.com/hexlet-codebattle/codebattle количество звезд внутри кнопки "Star us" на сайте https://codebattle.hexlet.io/ возрастает на единицу
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/
+  test-data: |
+    Кнопка: "Star us" 
+    Страница на GitHub: https://github.com/hexlet-codebattle/codebattle
+  steps:
+    - Нажимаем на кнопку "Star us" 
+    - Переходим автоматически на страницу https://github.com/hexlet-codebattle/codebattle
+    - Находим кнопку Starred на момент теста количество звезд - 778
+    - Нажимаем на кнопку Starred, количество звезд увеличивается ндо 779
+    - Возвращвемся на страницу https://codebattle.hexlet.io/
+    - Смотрим на количество звезд внутри кнопки "Star us" 
+  expected-result: |
+    Количество звезд по статитстике GitHub совпадает с количеством звезд внутри кнопки "Star us" на сайте https://codebattle.hexlet.io/ и равно 779
+
+- summary: |
+    Проверка корректного отображения количества пользователей в онлайн
+  requirement: |
+    При сравнении числовое количество пользователей в поле в верхней части страницы совпадает со списочным количеством пользователей онлайн напротив окна чата
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/
+  test-data: |
+    Поле числовое: Online 
+    Окно со списком онлайн-пользователей: Online players
+  steps:
+    - Находим числовое поле Online (на момент теста 3 онлайн пользователя) 
+    - Находим окно со списком онлайн-пользователей (на момент теста 3 пользователя: из них 2 в лобби, 1 играет)
+  expected-result: |
+    Количество пользователей в поле в верхней части страницы совпадает со списочным количеством пользователей онлайн 
+
+- summary: |
+    Проверка работоспособности кнопки с приглашением на состязание (скрещенные мечи)
+  requirement: |
+    При нажатии на кнопку с приглашением на состязание отображаются актуальные предложения к участию в соревнованиях
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/
+  test-data: |
+    Кнопка: *скрещенные мечи*
+  steps:
+    - Нажимаем на кнопку *скрещенные мечи*
+  expected-result: |
+    Всплывает окно с актуальным предложением, на момент теста отображается сообщение "No invites"
+
+- summary: |
+    Проверка работоспособности вкладки с перечнем опций под именем пользователя
+  requirement: |
+    При нажатии на вкладку с именем пользователя открывается перечень опций работы с сайтом
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/
+  test-data: |
+    Вкладка: Markusi
+  steps:
+    - Нажимаем на вкладку Markusi
+  expected-result: |
+    Появляется перечень с возможностями по работе на сайте: My profile, Settings, Hall of Fame, Tournaments, Tasks, Clans, SourceCode, Hexlet, Join Discord, Tg#codebattle, Sign Out
+
+- summary: |
+    Проверка работоспособности кнопки My profile во вкладке с именем пользователя
+  requirement: |
+    При нажатии на кнопку My profile происходит автоматческий переход на страницу со статистическими данными пользователя https://codebattle.hexlet.io/users/
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/
+  test-data: |
+    Вкладка: Markusi
+    Кнопка: My profile
+  steps:
+    - Нажимаем на вкладку Markusi
+    - Кликаем на кнопку My profile
+  expected-result: |
+    Происходит автоматческий переход на страницу со статистическими данными пользователя и завершенными играми https://codebattle.hexlet.io/users/20329 
+
+- summary: |
+    Проверка корректности отображения вкладки Statistics статистики на странице профиля My profile 
+  requirement: |
+    При открытии вкладки Statistics на странице профиля https://codebattle.hexlet.io/users/ корректно отображаются данные о рейтингах, количествах пройденных игр, таблица-календарь активностей на сайте
+  prerequisites: |
+    Открыть страницу профиля пользователя https://codebattle.hexlet.io/users/
+  test-data: |
+    Страница профиля: https://codebattle.hexlet.io/users/20329
+    Вкладка: Statistics
+  steps:
+    - В окне профиля нажимем на вкладку Statistics
+  expected-result: |
+    В окне появляются данные о рейтингах, количествах пройденных игр, таблица-календарь активностей на сайте 
+
+- summary: |
+    Проверка корректности отображения вкладки Completed games завершенных игр на странице профиля My profile 
+  requirement: |
+    При открытии вкладки Completed games на странице профиля https://codebattle.hexlet.io/users/ корректно отображаются данные о завершенных играх 
+  prerequisites: |
+    Открыть страницу профиля пользователя https://codebattle.hexlet.io/users/
+  test-data: |
+    Страница профиля: https://codebattle.hexlet.io/users/20329
+    Вкладка: Completed games
+  steps:
+    - В окне профиля нажимем на вкладку Completed games
+  expected-result: |
+    В окне появляются данные о завершенных играх пользователя 
+
+- summary: |
+    Проверка корректности отображения языка программирования пользователя на странице профиля My profile
+  requirement: |
+    Под изображением профиля и именем пользователя корректно отображается сокращенное название выбранного языка программирования
+  prerequisites: |
+    Открыть страницу профиля пользователя https://codebattle.hexlet.io/users/
+  test-data: |
+    Страница профиля: https://codebattle.hexlet.io/users/20329
+    Поле: Lang
+  steps:
+    - Находим поле Lang на странице профиля 
+  expected-result: |
+    В поле отображается название языка программирования "JS", что соответствует выбранному по умолчанию языку Javascript  
+
+- summary: |
+    Проверка корректности отображения даты регистрации пользователя на сайте на странице профиля My profile
+  requirement: |
+    Под изображением профиля и именем пользователя корректно отображается дата регистрации на сайте
+  prerequisites: |
+    Открыть страницу профиля пользователя https://codebattle.hexlet.io/users/
+  test-data: |
+    Страница профиля: https://codebattle.hexlet.io/users/20329
+    Поле: joined at
+  steps:
+    - Находим поле joined at на странице профиля 
+  expected-result: |
+    В поле отображается дата "January 9, 2026" что соответствует дате регистрации на сайте
