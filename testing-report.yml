@@ -69,11 +69,11 @@
   
 - summary: |
     Проверка регистрации нового пользователя без авторизированного аккаунта на Discord и с помощью кнопки "Sign up with Discord"
-  status: pass
+  status: fail
 
 - summary: |
     Проверка регистрации нового пользователя c помощью авторизированного аккаунта на Discord и с помощью кнопки "Sign up with Discord"
-  status: pass
+  status: fail
 
 - summary: |
     Проверка работоспособности скрытой ссылки "Sing in"
