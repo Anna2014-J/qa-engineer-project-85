@@ -1105,3 +1105,262 @@
     - Проигрывается звук на максимальном уровне громкости 
 expected-result: |
     Происходит музыкальная демонстрация звука из игры Dendy на разных уровнях громкости
+
+- summary: |
+    Проверка работоспособности кнопки Hall of Fame во вкладке с именем пользователя
+  requirement: |
+    При нажатии на кнопку Hall of Fame происходит автоматческий переход на страницу с рейтингами лидирующих в разных категориях пользователей https://codebattle.hexlet.io/hall_of_fame
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/
+  test-data: |
+    Вкладка: Markusi
+    Кнопка: Hall of Fame
+  steps:
+    - Нажимаем на вкладку Markusi
+    - Кликаем на кнопку Hall of Fame
+  expected-result: |
+    Происходит автоматческий переход на страницу с рейтингами лидирующих в разных категориях пользователей https://codebattle.hexlet.io/hall_of_fame
+
+- summary: |
+    Проверка работоспособности кнопки View All Seasons на странице Hall of Fame https://codebattle.hexlet.io/hall_of_fame 
+  requirement: |
+    При нажатии на кнопку View All Seasons происходит автоматческий переход на страницу с рейтингами лидирующих пользователей разных игровых периодов https://codebattle.hexlet.io/seasons
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/hall_of_fame 
+  test-data: |
+    Кнопка: View All Seasons
+  steps:
+    - Нажимаем на кнопку View All Seasons
+  expected-result: |
+    Происходит автоматческий переход на страницу с рейтингами лидирующих пользователей разных игровых периодов https://codebattle.hexlet.io/seasons
+
+- summary: |
+    Проверка работоспособности кнопки Hall of Fame на странице Seasons https://codebattle.hexlet.io/seasons
+  requirement: |
+    При нажатии на кнопку Hall of Fame происходит автоматческий переход  на страницу с рейтингами лидирующих в разных категориях пользователей https://codebattle.hexlet.io/hall_of_fame
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/seasons 
+  test-data: |
+    Кнопка: Hall of Fame
+  steps:
+    - Нажимаем на кнопку Hall of Fame
+  expected-result: |
+    Происходит автоматческий переход  на страницу с рейтингами лидирующих в разных категориях пользователей https://codebattle.hexlet.io/hall_of_fame
+
+- summary: |
+    Проверка работоспособности поля ввода Search Player на странице зала славы
+  requirement: |
+    При вводе текстовых значений в поле Search Player рейтинге происходит сортировка, соответствующая данным поиска
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/hall_of_fame 
+  test-data: |
+    Поле: Search Player
+    Имя пользователя: Nick
+  steps:
+    - Нажимаем на поле ввода Search Player
+    - Вводим значение Nick 
+  expected-result: |
+    Происходит сортировка списка в соответствии с текстовым значением Nick, в перечне после работы фильтра остается только один пользователь с именем Nick
+
+- summary: |
+    Проверка работы сортировки данных через поле Search Player при вводе имени несуществующего пользователя
+  requirement: |
+    При вводе имени несуществующего пользователя в поле Search Player рейтинге появляется сообщение "No players match your filters"
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/hall_of_fame 
+  test-data: |
+    Поле: Search Player
+    Имя пользователя: Бабочка
+  steps:
+    - Нажимаем на поле ввода Search Player
+    - Вводим значение Бабочка
+  expected-result: |
+    В поле рейтинга появляется сообщение "No players match your filters"
+
+- summary: |
+    Проверка работоспособности кнопки "Clear your filter" на странице зала славы
+  requirement: |
+    При нажатии на кнопку "Clear your filter" фильтр поиска по имени пользователя сбрасывает ранее заданные значения поиска
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/hall_of_fame 
+  test-data: |
+    Поле: Search Player
+    Имя пользователя: Бабочка
+    Кнопка: Clear your filter
+  steps:
+    - Нажимаем на поле ввода Search Player
+    - Вводим значение Бабочка
+    - Нажимаем на кнопку Clear your filter
+  expected-result: |
+    Предыдущие значения поиска сброшены, в списке рейтинга отображаются все пользователи
+
+- summary: |
+    Проверка работоспособности кнопки "Stats" в рейтинге пользователей на странице зала славы
+  requirement: |
+    При нажатии на кнопку "Stats" открывается окно со статистикой выбранного пользователя
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/hall_of_fame 
+  test-data: |
+    Имя пользователя: DiGriz
+    Кнопка: Stats
+  steps:
+    - Находим в списке пользователя DiGriz
+    - Нажимаем на кнопку Stats 
+  expected-result: |
+    Открывается окно с личной статистикой пользователя DiGriz
+
+- summary: |
+    Проверка работоспособности фильтра "Sort by*" в рейтинге лидиров на странице зала славы
+  requirement: |
+    При нажатии на фильтр "Sort by*" список выстраивается в числовом порядке по месту в перечне
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/hall_of_fame 
+  test-data: |
+    Рейтинг: Full Leaderboard
+    Фильтр: Sort by*
+  steps:
+    - Нажимаем на фильтр со стрелочкой, именуемый "Sort by*"
+    - Второй раз нажимаем на фильтр "Sort by*"
+  expected-result: |
+    Список при первом клике выстраивается в порядке по возрастанию по месту в рейтинге, при втором клике список выстраивается по убыванию по месту в рейтинге
+
+- summary: |
+    Проверка работоспособности фильтра "Sort by player" в рейтинге лидиров на странице зала славы
+  requirement: |
+    При нажатии на фильтр "Sort by player" список выстраивается в алфавитном порядке по имени пользователя
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/hall_of_fame 
+  test-data: |
+    Рейтинг: Full Leaderboard
+    Фильтр: Sort by player
+  steps:
+    - Нажимаем на фильтр  "Sort by player"
+    - Второй раз нажимаем на фильтр "Sort by player"
+  expected-result: |
+    Список при первом клике выстраивается в алфавитном порядке по имени пользователя в рейтинге, при втором клике список выстраивается в обратном алфавитном порядке в рейтинге
+
+- summary: |
+    Проверка работоспособности фильтра "Sort by Clan" в рейтинге лидиров на странице зала славы
+  requirement: |
+    При нажатии на фильтр "Sort by Clan" список выстраивается в алфавитном порядке по названию клана
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/hall_of_fame 
+  test-data: |
+    Рейтинг: Full Leaderboard
+    Фильтр: Sort by Clan
+  steps:
+    - Нажимаем на фильтр  "Sort by Clan"
+    - Второй раз нажимаем на фильтр "Sort by Clan"
+  expected-result: |
+    Список при первом клике выстраивается в алфавитном порядке по названию клана в рейтинге, при втором клике список выстраивается в обратном алфавитном порядке
+
+- summary: |
+    Проверка работоспособности фильтра "Sort by Points" в рейтинге лидиров на странице зала славы
+  requirement: |
+    При нажатии на фильтр "Sort by Points" список выстраивается в числовом порядке по игровым очкам
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/hall_of_fame 
+  test-data: |
+    Рейтинг: Full Leaderboard
+    Фильтр: Sort by Points
+  steps:
+    - Нажимаем на фильтр  "Sort by Points"
+    - Второй раз нажимаем на фильтр "Sort by Points"
+  expected-result: |
+    Список при первом клике выстраивается в числовом порядке по игровым очкам в рейтинге, при втором клике список выстраивается в обратном числовом порядке
+
+- summary: |
+    Проверка работоспособности фильтра "Sort by Wins" в рейтинге лидиров на странице зала славы
+  requirement: |
+    При нажатии на фильтр "Sort by Wins" список выстраивается в числовом порядке по колличеству побед
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/hall_of_fame 
+  test-data: |
+    Рейтинг: Full Leaderboard
+    Фильтр: Sort by Wins
+  steps:
+    - Нажимаем на фильтр  "Sort by Wins"
+    - Второй раз нажимаем на фильтр "Sort by Wins"
+  expected-result: |
+    Список при первом клике выстраивается в числовом порядке по колличеству побед, при втором клике список выстраивается в обратном числовом порядке по колличеству побед
+
+- summary: |
+    Проверка работоспособности фильтра "Sort by Wins" в рейтинге лидиров на странице зала славы
+  requirement: |
+    При нажатии на фильтр "Sort by Wins" список выстраивается в числовом порядке по колличеству побед
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/hall_of_fame 
+  test-data: |
+    Рейтинг: Full Leaderboard
+    Фильтр: Sort by Wins
+  steps:
+    - Нажимаем на фильтр  "Sort by Wins"
+    - Второй раз нажимаем на фильтр "Sort by Wins"
+  expected-result: |
+    Список при первом клике выстраивается в числовом порядке по колличеству побед, при втором клике список выстраивается в обратном числовом порядке по колличеству побед
+
+- summary: |
+    Проверка работоспособности фильтра "Sort by Score" в рейтинге лидиров на странице зала славы
+  requirement: |
+    При нажатии на фильтр "Sort by Score" список выстраивается в числовом порядке по счету пользователя
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/hall_of_fame 
+  test-data: |
+    Рейтинг: Full Leaderboard
+    Фильтр: Sort by Score
+  steps:
+    - Нажимаем на фильтр  "Sort by Score"
+    - Второй раз нажимаем на фильтр "Sort by Score"
+  expected-result: |
+    Список при первом клике выстраивается в числовом порядке по счету пользователя, при втором клике список выстраивается в обратном числовом порядке по счету пользователя
+
+- summary: |
+    Проверка работоспособности кнопки создания игры "Create a battle"
+  requirement: |
+    При нажатии на кнопку "Create a battle" открывается окно с выбором опций  игры
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/
+  test-data: |
+   Кнопка: Create a battle
+  steps:
+    - Нажимаем на фильтр "Create a battle"
+  expected-result: |
+     Появляется окно с опциями для выбора формата игры
+
+- summary: |
+    Проверка работоспособности кнопки выбора игры с ботом "With a bot"
+  requirement: |
+    После выбора соревнования с ботом "With a bot" и запуска игры соперником пользователя становится бот
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/
+  test-data: |
+   Кнопка: With a bot
+   Тег: Math
+   Игра: rect_area
+   Кнопка: Create a battle
+  steps:
+    - Нажимаем на фильтр "With a bot"
+    - Кликаем тег "Math"
+    - Выбираем игру  rect_area
+    - Нажимаем на кнопку "Create a battle"
+  expected-result: |
+     Запускается игра с ботом
+
+- summary: |
+    Проверка работоспособности тегов для выбора игры
+  requirement: |
+    При нажатии на один из предложенных тегов в списке игр происходит сортировка и в перечне остаются игры, соответствующие значению тега
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/
+  test-data: |
+   Тег: Math
+  steps:
+    - Нажимаем на тег "Math"
+  expected-result: |
+     В перечне остаются игры, связанные с матемематическими задачами
+
+
+
+
+
+
