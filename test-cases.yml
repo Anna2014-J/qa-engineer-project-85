@@ -362,7 +362,7 @@
   test-data: |
     Ссылка: Current version: d992ede
   steps:
-    - Кликнуть левой кнопкой мыши по скрытой ссылке "Current version: d992ede", расположенный справа у нижнего края страницы
+    - Кликнуть левой кнопкой мыши по скрытой ссылке "Current version d992ede", расположенный справа у нижнего края страницы
   expected-result: |
      Происходит автоматический переход на страницу сайта GitHub - https://github.com/hexlet-codebattle/codebattle/commit/d992edeee653f188854aa72bb6f8df8d727fc00f
 
@@ -981,7 +981,7 @@
     - Вводим в поле Owls03
     - Нажимаем кнопку Save
     - Кликаем по ссылке clan list
-    - Переходим автоматически на страницу https://codebattle.hexlet.io/clans
+    - Переходим автоматически на страницу кланов
     - Прокручиваем список до конца
   expected-result: |
      В общем списке корректно отображается отредактированное название клана Owls03 
@@ -1081,7 +1081,7 @@
   test-data: |
     Select sound type: Dendy
   steps:
-    - Кликаем на кнопку  Select sound type: Dendy
+    - Кликаем на кнопку  Select sound type Dendy
   expected-result: |
     Происходит музыкальная демонстрация звука из игры Dendy
 
