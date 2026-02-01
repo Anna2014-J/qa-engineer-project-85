@@ -39,11 +39,14 @@
     Открыть страницу регистрации пользователя https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
     Кнопка: "Submit"
+    Почта: lili_0101@gmail.com
+    Пароль: Lili0101!
+    Имя пользователя: Lilo04
   steps:
-    - В поле ввода логина "Nickname" вписываем имя пользователя Markusi
-    - В поле ввода электронной почты "Email" вписываем markus_0101@gmail.com
-    - В поле ввода пароля "Password" вписываем Markus0101!
-    - В поле ввода подтверждения пароля "Password Confirmation" вписываем Markus0101!
+    - В поле ввода логина "Nickname" вписываем имя пользователя Lilo04
+    - В поле ввода электронной почты "Email" вписываем lili_0101@gmail.com
+    - В поле ввода пароля "Password" вписываем Lili0101!
+    - В поле ввода подтверждения пароля "Password Confirmation" вписываем Lili0101!
     - Нажимаем кнопку "Submit"
   expected-result: |
      Автоматически происходит переход на новую персонализированную страницу пользователя 
@@ -56,14 +59,14 @@
     Открыть страницу регистрации пользователя https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
     Кнопка: "Submit"
-    Почта: markus_0101@gmail.com
-    Пароль: Markus0101!
-    Имя пользователя: Markusi
+    Почта: iriska-8@gmail.com
+    Пароль: Iris0101!
+    Имя пользователя: Irina-8
   steps:
-    - В поле ввода логина "Nickname" вписываем имя пользователя Markusi
-    - В поле ввода электронной почты "Email" вписываем markus_0101@gmail.com
-    - В поле ввода пароля "Password" вписываем Markus0101!
-    - В поле ввода подтверждения пароля "Password Confirmation" вписываем Markus0101!
+    - В поле ввода логина "Nickname" вписываем имя пользователя Irina-8
+    - В поле ввода электронной почты "Email" вписываем iriska-8@gmail.com
+    - В поле ввода пароля "Password" вписываем Iris0101!
+    - В поле ввода подтверждения пароля "Password Confirmation" вписываем Iris0101!
     - Нажимаем кнопку "Submit"
   expected-result: |
      На экране появляется окно с сообщением об отправки ссылки для подтвержения регистрации на электронную почту 
@@ -75,12 +78,12 @@
   prerequisites: |
     Открыть страницу регистрации пользователя https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
-    Почта: markus_0101@gmail.com
+    Почта: owl_0101@gmail.com
     Пароль: Markus0101!
     Имя пользователя: MarkusЛАЛА34
   steps:
     - В поле ввода логина "Nickname" вписываем имя пользователя MarkusЛАЛА34
-    - В поле ввода электронной почты "Email" вписываем markus_0101@gmail.com
+    - В поле ввода электронной почты "Email" вписываем owl_0101@gmail.com
     - В поле ввода пароля "Password" вписываем Markus0101!
     - В поле ввода подтверждения пароля "Password Confirmation" вписываем Markus0101!
     - Нажимаем кнопку "Submit"
@@ -94,12 +97,12 @@
   prerequisites: |
     Открыть страницу регистрации пользователя https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
-    Почта: markus_0101@gmail.com
+    Почта: free_0101@gmail.com
     Пароль: Markus0101!
     Имя пользователя: Markusikkkkkkkkkkkkkkkkkkkkkkkkkkkkk
   steps:
     - В поле ввода логина "Nickname" вписываем имя пользователя Markusikkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-    - В поле ввода электронной почты "Email" вписываем markus_0101@gmail.com
+    - В поле ввода электронной почты "Email" вписываем free_0101@gmail.com
     - В поле ввода пароля "Password" вписываем Markus0101!
     - В поле ввода подтверждения пароля "Password Confirmation" вписываем Markus0101!
     - Нажимаем кнопку "Submit"
@@ -113,12 +116,12 @@
   prerequisites: |
     Открыть страницу регистрации пользователя https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
-    Почта: markus_0101@gmail.com
+    Почта: markus_890@gmail.com
     Пароль: Markus0101!
     Имя пользователя: Ma
   steps:
     - В поле ввода логина "Nickname" вписываем имя пользователя Ma
-    - В поле ввода электронной почты "Email" вписываем markus_0101@gmail.com
+    - В поле ввода электронной почты "Email" вписываем markus_890@gmail.com
     - В поле ввода пароля "Password" вписываем Markus0101!
     - В поле ввода подтверждения пароля "Password Confirmation" вписываем Markus0101!
     - Нажимаем кнопку "Submit"
@@ -132,11 +135,11 @@
   prerequisites: |
     Открыть страницу регистрации пользователя https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
-    Почта: markus_0101@gmail.com
+    Почта: yo_0101@gmail.com
     Пароль: Markus0101!
-    Имя пользователя: Markusi
+    Имя пользователя: Youare
   steps:
-    - В поле ввода логина "Nickname" вписываем имя пользователя Markusi
+    - В поле ввода логина "Nickname" вписываем имя пользователя Youare
     - В поле ввода электронной почты "Email" ничего не вписываем
     - В поле ввода пароля "Password" вписываем Markus0101!
     - В поле ввода подтверждения пароля "Password Confirmation" вписываем Markus0101!
@@ -152,12 +155,12 @@
   prerequisites: |
     Открыть страницу регистрации пользователя https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
-    Почта: markus_03446@gmail.com
+    Почта: golden_03446@gmail.com
     Пароль: Markus0101!
     Имя пользователя: Markusi
   steps:
     - В поле ввода логина "Nickname" вписываем имя пользователя Markusi
-    - В поле ввода электронной почты "Email" вписываем markus_03446@gmail.com
+    - В поле ввода электронной почты "Email" вписываем golden_03446@gmail.com
     - В поле ввода пароля "Password" вписываем Markus0101!
     - В поле ввода подтверждения пароля "Password Confirmation" вписываем Markus0101!
     - Нажимаем кнопку "Submit"
@@ -192,9 +195,9 @@
   test-data: |
     Почта: markus_0101
     Пароль: Markus0101!
-    Имя пользователя: Markusi
+    Имя пользователя: Moonlight
   steps:
-    - В поле ввода логина "Nickname" вписываем имя пользователя Markusi
+    - В поле ввода логина "Nickname" вписываем имя пользователя Moonlight
     - В поле ввода электронной почты "Email" вписываем markus_0101
     - В поле ввода пароля "Password" вписываем Markus0101!
     - В поле ввода подтверждения пароля "Password Confirmation" вписываем Markus0101!
@@ -209,13 +212,13 @@
   prerequisites: |
     Открыть страницу регистрации пользователя https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
-    Почта: markus_0101@gmail.com
+    Почта: chicken_0101@gmail.com
     Пароль: Markus0101!
     Подтверждение пароля: Woody12!
-    Имя пользователя: Markusi
+    Имя пользователя: Chicken
   steps:
-    - В поле ввода логина "Nickname" вписываем имя пользователя Markusi
-    - В поле ввода электронной почты "Email" вписываем markus_0101@gmail.com
+    - В поле ввода логина "Nickname" вписываем имя пользователя Chicken
+    - В поле ввода электронной почты "Email" вписываем chicken_0101@gmail.com
     - В поле ввода пароля "Password" вписываем Markus0101!
     - В поле ввода подтверждения пароля "Password Confirmation" вписываем Woody12!
     - Нажимаем кнопку "Submit"
@@ -229,13 +232,13 @@
   prerequisites: |
     Открыть страницу регистрации пользователя https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
-    Почта: markus_0101@gmail.com
+    Почта: galina_0101@gmail.com
     Пароль: Markus0101!
     Подтверждение пароля: Ma
-    Имя пользователя: Markusi
+    Имя пользователя: Galaxy7
   steps:
-    - В поле ввода логина "Nickname" вписываем имя пользователя Markusi
-    - В поле ввода электронной почты "Email" вписываем markus_0101@gmail.com
+    - В поле ввода логина "Nickname" вписываем имя пользователя Galaxy7
+    - В поле ввода электронной почты "Email" вписываем galina_0101@gmail.com
     - В поле ввода пароля "Password" вписываем Ma
     - В поле ввода подтверждения пароля "Password Confirmation" вписываем Ma
     - Нажимаем кнопку "Submit"
@@ -249,13 +252,13 @@
   prerequisites: |
     Открыть страницу регистрации пользователя https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
-    Почта: markus_0101@gmail.com
+    Почта: star_0101@gmail.com
     Пароль: Markus0101!
     Подтверждение пароля: Maaaaaaaaaaaaaaaaaaaaaaaaa
-    Имя пользователя: Markusi
+    Имя пользователя: Star5
   steps:
-    - В поле ввода логина "Nickname" вписываем имя пользователя Markusi
-    - В поле ввода электронной почты "Email" вписываем markus_0101@gmail.com
+    - В поле ввода логина "Nickname" вписываем имя пользователя Star5
+    - В поле ввода электронной почты "Email" вписываем star_0101@gmail.com
     - В поле ввода пароля "Password" вписываем Maaaaaaaaaaaaaaaaaaaaaaaaa
     - В поле ввода подтверждения пароля "Password Confirmation" вписываем Maaaaaaaaaaaaaaaaaaaaaaaaa
     - Нажимаем кнопку "Submit"
@@ -585,9 +588,23 @@
      Автоматически происходит переход на страницу сайта, с доступом в личный кабинет пользователя, с профилем на базе аккаунта в Discord
 
 - summary: |
-    Проверка восстановления пароля при вводе адреса электронной почты ранее зарегистрированного пользователя
+    Проверка кнонки для восстановления пароля при вводе адреса электронной почты ранее зарегистрированного пользователя
   requirement: |
-    При вводе адреса электронной почты ранее зарегистрированного пользователя на почту отправляется письмо с рекомендациями для восстановления пароля
+    При вводе адреса электронной почты ранее зарегистрированного пользователя и нажатии на кнопку "Submit" на почту отправляется письмо с рекомендациями для восстановления пароля
+  prerequisites: |
+    Открыть страницу восстановления пароля https://codebattle.hexlet.io/remind_password
+  test-data: 
+    Почта: markus_0101@gmail.com
+  steps:
+    - В поле ввода электронной почты "Email" вписываем markus_0101@gmail.com
+    - Нажимаем на кнопку "Submit"
+  expected-result: |
+    На экране появляется сообщение: "We have sent you an email with instructions on how to reset your password"
+
+- summary: |
+    Проверка возможности восстановления пароля при вводе адреса электронной почты ранее зарегистрированного пользователя
+  requirement: |
+    После отправки письма на почту открывается окно для ввода нового пароля
   prerequisites: |
     Открыть страницу восстановления пароля https://codebattle.hexlet.io/remind_password
   test-data: |
@@ -595,8 +612,11 @@
   steps:
     - В поле ввода электронной почты "Email" вписываем markus_0101@gmail.com
     - Нажимаем на кнопку "Submit"
+    - Заходим в личный кабинет на странце электронной почты
+    - Открываем письмо с ссылкой для подтверждения восстановления пароля
+    - Проходим по ссылке на страницу восстановления пароля
   expected-result: |
-    На экране появляется сообщение: "We have sent you an email with instructions on how to reset your password"
+    В открывшимся окне вводим данные нового пароля и нажимаем Save
 
 - summary: |
     Проверка восстановления пароля при вводе пустого значения в поле ввода адреса электронной почты
@@ -1082,6 +1102,23 @@
     - Проигрывается звук на максимальном уровне громкости 
   expected-result: |
       Происходит музыкальная демонстрация звука из игры Dendy на разных уровнях громкости
+
+- summary: |
+    Проверка соответствия выбранного звука со звуком в игре
+  requirement: |
+    После завершения игры воспроизводится звук, выбранный ранее в настройках
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/settings
+  test-data: |
+    Empty
+  steps:
+    - Кликаем на кнопку  Select sound type CS
+    - Нажимаем на кнопку Save
+    - Запустить игру "rect_area" 
+    - Выиграть игру
+  expected-result: |
+    Происходит музыкальная демонстрация звука несоответствующего настройкам
+
 
 - summary: |
     Проверка работоспособности кнопки Hall of Fame во вкладке с именем пользователя
